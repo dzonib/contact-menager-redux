@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import TextInputGroup from '../layout/TextInputGroup';
+import PropTypes from 'prop-types'
+import {getContact} from '../../redux/actions/contactActions'
+
 
 class EditContact extends Component {
   state = {

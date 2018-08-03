@@ -1,27 +1,31 @@
-import {GET_CONTACTS, ADD_CONTACT, DELETE_CONTACT} from '../actions/types'
+import {GET_CONTACTS, ADD_CONTACT, DELETE_CONTACT, GET_CONTACT, UPDATE_CONTACT} from '../actions/types'
 
 const initialState = {
-  contacts: []
+  contacts: [],
+  contact: {}
 };
 
 export default(state = initialState, action) => {
   switch (action.type) {
     case GET_CONTACTS:
-    console.log(action)
       return {
         ...state,
         contacts: action.payload
       }
+    case GET_CONTACT:
+      return {
+        ...state,
+        contact: action.payload
+      }  
     case ADD_CONTACT:
       return {
         ...state,
         contacts: [action.payload, ...state.contacts]
       }
     case DELETE_CONTACT:
-    console.log(action)
       return {
         ...state,
-        contacts: state.contacts.filter( contact => contact.id !== action.payload.id)
+        contacts: state.contacts.filter( contact => contact.id !== action.payload)
       }    
     default:
       return state;

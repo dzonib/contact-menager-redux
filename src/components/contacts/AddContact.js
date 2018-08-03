@@ -41,7 +41,7 @@ class AddContact extends Component {
 
     //// SUBMIT CONTACT ////
 
-    this.props.addContact({...newContact, id: "asd5"})
+    this.props.addContact(newContact)
     
     // Clear State
     this.setState({
